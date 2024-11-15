@@ -1,45 +1,59 @@
 {
-    "root": true,
-    "ignorePatterns": ["**/*"],
-    "overrides": [
-      {
-        "files": ["*.ts"],
-        "parserOptions": {
-          "project": ["tsconfig.json"],
-          "sourceType": "module"
-        },
-        "extends": [
-          "plugin:@angular-eslint/recommended",
-          "plugin:@typescript-eslint/recommended",
-          "plugin:@typescript-eslint/recommended-requiring-type-checking",
-          "plugin:rxjs/recommended",
-          "plugin:@nx/angular"
+  "root": true,
+  "ignorePatterns": ["**/*", "node_modules", "dist", "*.js"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:rxjs/recommended",
+        "plugin:@nx/angular"
+      ],
+      "parserOptions": {
+        "project": [
+          "apps/frontend/tsconfig.json",
+          "apps/backend/tsconfig.json",
+          "apps/frontend/tsconfig.app.json",
+          "apps/backend/tsconfig.app.json",
+          "apps/frontend/tsconfig.spec.json",
+          "apps/backend/tsconfig.spec.json"
         ],
-        "rules": {
-          "rxjs/no-create": "error",
-          "rxjs/no-promise": "error",
-  
-          "@angular-eslint/component-selector": [
-            "error",
-            {
-              "prefix": "app",
-              "style": "kebab-case",
-              "type": "element"
-            }
-          ],
-          "@angular-eslint/no-standalone-components": "error",
-  
-          "@typescript-eslint/explicit-function-return-type": "warn",
-          "@typescript-eslint/no-floating-promises": "error",
-          "@typescript-eslint/no-misused-promises": "error",
-          "@angular-eslint/use-injectable-provided-in": "error"
-        }
+        "sourceType": "module"
       },
-      {
-        "files": ["*.html"],
-        "extends": ["plugin:@angular-eslint/template/recommended"],
-        "rules": {}
+      "rules": {
+        "rxjs/no-create": "error",
+        "rxjs/no-exposed-subjects": "error",
+        "rxjs/no-ignored-observable": "error",
+        "rxjs/no-ignored-subscription": "error",
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "prefix": "app",
+            "style": "kebab-case",
+            "type": "element"
+          }
+        ],
+        "@angular-eslint/no-standalone-components": "error",
+        "@typescript-eslint/explicit-function-return-type": "warn",
+        "@typescript-eslint/no-floating-promises": "error",
+        "@typescript-eslint/no-misused-promises": "error",
+        "@angular-eslint/use-injectable-provided-in": "error",
+        "@typescript-eslint/no-unused-expressions": [
+          "error",
+          {
+            "allowShortCircuit": true,
+            "allowTernary": true,
+            "allowTaggedTemplates": true
+          }
+        ]
       }
-    ]
-  }
-  
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    }
+  ]
+}
