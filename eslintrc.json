@@ -1,0 +1,45 @@
+{
+    "root": true,
+    "ignorePatterns": ["**/*"],
+    "overrides": [
+      {
+        "files": ["*.ts"],
+        "parserOptions": {
+          "project": ["tsconfig.json"],
+          "sourceType": "module"
+        },
+        "extends": [
+          "plugin:@angular-eslint/recommended",
+          "plugin:@typescript-eslint/recommended",
+          "plugin:@typescript-eslint/recommended-requiring-type-checking",
+          "plugin:rxjs/recommended",
+          "plugin:@nx/angular"
+        ],
+        "rules": {
+          "rxjs/no-create": "error",
+          "rxjs/no-promise": "error",
+  
+          "@angular-eslint/component-selector": [
+            "error",
+            {
+              "prefix": "app",
+              "style": "kebab-case",
+              "type": "element"
+            }
+          ],
+          "@angular-eslint/no-standalone-components": "error",
+  
+          "@typescript-eslint/explicit-function-return-type": "warn",
+          "@typescript-eslint/no-floating-promises": "error",
+          "@typescript-eslint/no-misused-promises": "error",
+          "@angular-eslint/use-injectable-provided-in": "error"
+        }
+      },
+      {
+        "files": ["*.html"],
+        "extends": ["plugin:@angular-eslint/template/recommended"],
+        "rules": {}
+      }
+    ]
+  }
+  
