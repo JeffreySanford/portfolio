@@ -1,14 +1,24 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
-  standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'frontend';
+  isScreenWide = window.innerWidth > 768;
+  title = 'portfolio';
+
+  menuItems = [
+    { icon: 'home', label: 'Home', routerLink: '/' },
+    { icon: 'table_chart', label: 'Table', routerLink: '/table' },
+    { icon: 'bar_chart', label: 'Data Visualization', routerLink: '/data-visualization' },
+    { icon: 'restaurant', label: 'Peasant Kitchen', routerLink: '/peasant-kitchen' },
+    { icon: 'movie', label: 'Movies', routerLink: '/space-video' }
+  ];
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.isScreenWide = window.innerWidth > 768;
+  }
 }

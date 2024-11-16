@@ -1,8 +1,10 @@
-export default {
+import type { Config } from '@jest/types';
+
+const config: Config.InitialOptions = {
   displayName: 'frontend',
-  preset: '../../jest.preset.js',
+  preset: '<rootDir>jest-preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../coverage/frontend',
+  coverageDirectory: '../../coverage/apps/frontend',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
@@ -19,3 +21,5 @@ export default {
     'jest-preset-angular/build/serializers/html-comment',
   ],
 };
+
+export default config;

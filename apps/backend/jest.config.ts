@@ -1,10 +1,10 @@
 export default {
   displayName: 'backend',
-  preset: '../../jest.preset.js',
+  preset: '<rootDir>/jest-preset.js',
   testEnvironment: 'node',
   transform: {
-    '^.+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
+    '^.+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/apps/backend/tsconfig.spec.json' }],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/apps/backend',
+  coverageDirectory: '<rootDir>/apps/backend/coverage/apps/backend',
 };

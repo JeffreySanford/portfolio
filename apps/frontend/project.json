@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "$schema": "../../node_modules/@nrwl/workspace/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
   "sourceRoot": "frontend/src",
@@ -12,7 +12,7 @@
       "options": {
         "outputPath": "dist/frontend",
         "index": "apps/frontend/src/index.html",
-        "browser": "apps/frontend/src/main.ts",
+        "browser": "apps/frontend/src/app/app.module.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/frontend/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
