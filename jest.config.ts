@@ -4,7 +4,7 @@ const config: Config.InitialOptions = {
   projects: [
     {
       displayName: 'frontend',
-      preset: './jest-preset.js',
+      preset: '../../jest-preset.js',
       setupFilesAfterEnv: ['<rootDir>/apps/frontend/src/test-setup.ts'],
       coverageDirectory: './coverage/apps/frontend',
       testPathIgnorePatterns: ['<rootDir>/apps/frontend-e2e/'],

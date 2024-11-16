@@ -1,6 +1,6 @@
 export default {
   displayName: 'backend',
-  preset: '<rootDir>/jest-preset.js',
+  preset: '../../jest-preset.js',
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/apps/backend/tsconfig.spec.json' }],
